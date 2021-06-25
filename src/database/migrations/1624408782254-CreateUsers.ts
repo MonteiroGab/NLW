@@ -35,9 +35,9 @@ export class CreateUsers1624408782254 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()"
                     },
-                ]                           
+                ],                           
             })
-        )
+        );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
