@@ -1,15 +1,16 @@
 import "reflect-metadata";
 import express, { Request, Response, NextFunction } from "express";
 import "express-async-errors";
-
+import cors from "cors";
 import { router } from "./routes";
 
 import "./database";
 
 const app = express();
-const port = 8080;
+app.use(cors());
 
 app.use(express.json());
+
 app.use(router);
 
 app.use(
@@ -27,5 +28,4 @@ app.use(
   }
 );
 
-app.listen(port);
-console.log(`Server running at ${port}`);
+app.listen(3000, () => console.log("Server is running"));
